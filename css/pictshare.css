@@ -3,15 +3,25 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-image: url('imgs/bg.png');
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-color: #6b6b6b;
+
 }
 
 #headcontainer
 {
-    padding-top:20px;
-    margin-left:100px;
+    padding-top: 10px;
+    width: 40%;
+    margin: auto;
+}
+
+
+#toppad {
+    padding-top: 10%;
+}
+
+#toppad2 {
+    padding-top: 20px;
 }
 
 .well {
