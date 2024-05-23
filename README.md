@@ -1,10 +1,10 @@
 <p align="center">
   <a href="" rel="noopener">
-    <img height=200px src="./css/imgs/logo/logo.svg" alt="PictShare logo">
+    <img height=200px src="./css/imgs/logo/horizontal3.png" alt="PictShare logo">
   </a>
 </p>
 
-<h1 align="center">PictShare</h1>
+<h1 align="center">SteveShare</h1>
 
 <h4 align="center">https://pictshare.net</h4>
 
@@ -24,9 +24,14 @@
 
 -----------------------------------------
 <center>
-
+<h3>Original Design:<h3>
 <p align="center">
     <img src="https://www.pictshare.net/39928d8239.gif" alt="PictShare demo">
+</p>
+
+<h3>My Steve Theme:<h3>
+<p align="center">
+    <img src="https://i.imgur.com/xDfUQ33.png" alt="SteveShare">
 </p>
 
 Table of contents
