@@ -12,6 +12,7 @@ docker cp content-controllers/text/text.controller.php $dockerid:/var/www/conten
 docker cp content-controllers/zip/zip.controller.php $dockerid:/var/www/content-controllers/zip
 docker cp api/geturl.php $dockerid:/var/www/api
 docker cp api/base64.php $dockerid:/var/www/api
+docker cp api/upload.php $dockerid:/var/www/api
 docker cp inc/core.php $dockerid:/var/www/inc
 
 

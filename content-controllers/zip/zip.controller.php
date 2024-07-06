@@ -39,12 +39,14 @@ class ZipController implements ContentController
         if($hash===false)
         {
             $hash = getNewHash('zip',6);
+            echo "<script>console.log('Debug Objects: " . $hash . "' );</script>";
         }
         else
         {
             if(isExistingHash($hash))
                 return array('status'=>'err','hash'=>$hash,'reason'=>'Custom hash already exists');
         }
+
 
         storeFile($tmpfile,$hash,true);
         

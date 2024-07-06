@@ -67,6 +67,11 @@ if($_REQUEST['base64'])
     {
         $answer = (new VideoController())->handleUpload($tmpfile,$hash);
     }
+    //or, a zip
+    else if(in_array($type,(new ZipController)->getRegisteredExtensions()))
+    {
+        $answer = (new ZipController())->handleUpload($tmpfile,$hash);
+    }
 
     if(!$answer)
         $answer = array('status'=>'err','reason'=>'Unsupported filetype','filetype'=>$type);
