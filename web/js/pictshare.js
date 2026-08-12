@@ -1,7 +1,33 @@
 Dropzone.autoDiscover = false;
 hljs.initHighlightingOnLoad();
 
+// Uploads go out via XHR/fetch, never a native form submit, so Chrome's
+// password manager never sees a "login" to offer saving. The Credential
+// Management API is how you explicitly ask it to prompt. Firefox doesn't
+// need this - it already offers to save the field via its own heuristics.
+function saveUploadCodeCredential(code) {
+    if (!code) return;
+    if (window.PasswordCredential && navigator.credentials && navigator.credentials.store) {
+        try {
+            navigator.credentials.store(new PasswordCredential({
+                id: "",
+                password: code,
+                name: "Upload Code"
+            }));
+        } catch (e) { /* Credential Management API not usable, ignore */ }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    // store() only saves - retrieval needs its own explicit call, this is
+    // what actually fills the field back in for browsers that support it.
+    var uploadCodeElem = document.getElementById("uploadcode");
+    if (uploadCodeElem && window.PasswordCredential && navigator.credentials && navigator.credentials.get) {
+        navigator.credentials.get({ password: true, mediation: "silent" }).then(function (cred) {
+            if (cred && cred.password) uploadCodeElem.value = cred.password;
+        }).catch(function () { /* no stored credential, or silent mediation declined */ });
+    }
+
     if (document.getElementById("dropzone") != null) {
         // options must be set at construction time so the hidden file input
         // Dropzone creates gets the accept attribute (native picker filtering)
@@ -63,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             } else {
                 if (response.status == 'ok') {
+                    var uploadCodeElem = document.getElementById("uploadcode");
+                    if (uploadCodeElem) saveUploadCodeCredential(uploadCodeElem.value);
                     if (window.PictShareUploads) {
                         window.PictShareUploads.add({
                             hash:        response.hash,
@@ -135,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     
                     var uploadInfo = document.getElementById("uploadinfo");
                     if (data.status == 'ok') {
+                        saveUploadCodeCredential(uploadCode);
                         if (window.PictShareUploads) {
                             window.PictShareUploads.add({
                                 hash:        data.hash,

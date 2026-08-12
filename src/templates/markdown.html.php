@@ -56,18 +56,19 @@
 
         <div class="container" id="headcontainer">
 
-                    <a href="/"><img src="/css/imgs/logo/horizontal3.png" /></a>
-                    <h4><?php echo $slogan; ?></h4>
-                    <div class="well">
-                            <a class="btn btn-primary" href="/raw/<?php echo $hash?>">Raw</a>
-                            <a class="btn btn-primary" href="/download/<?php echo $hash?>">Download</a>
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <a href="/"><img src="/css/imgs/logo/horizontal3.png" /></a>
+                        <h4><?php echo $slogan; ?></h4>
                     </div>
-                    
                     <div class="markdown-body">
                         <?php echo $content; ?>
                     </div>
+
+                    <div style="margin-top: 20px;">
+                        <a class="btn btn-primary" href="/raw/<?php echo $hash?>">Raw</a>
+                        <a class="btn btn-primary" href="/download/<?php echo $hash?>">Download</a>
+                    </div>
             
-            <footer>(c)<?php echo date("y");?> by<br/><a href="https://haschek.solutions" target="_blank"><img height="30" src="/css/imgs/hs_logo.png" /></a></footer>
         </div>
       
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

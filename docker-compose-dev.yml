@@ -6,6 +6,7 @@ services:
         dockerfile: docker/Dockerfile
     environment:
         - URL=http://localhost:8080/
+        - TITLE=Steve Share
         - MAX_UPLOAD_SIZE=1000
         # Security settings
         - ADMIN_PASSWORD=test # password for the admin panel. if empty, admin panel is disabled
@@ -14,7 +15,7 @@ services:
         - MASTER_DELETE_CODE= # code to delete all files
         - MASTER_DELETE_IP= # IP address to delete all files even without delete code
         - UPLOAD_FORM_LOCATION= # moves the upload form from / to whatever you set here
-        - UPLOAD_CODE= # if set, requires this code to upload files via api or web
+        - UPLOAD_CODE=test123 # if set, requires this code to upload files via api or web
         # image settings settings
         - ALLOW_BLOATING=false
         - JPEG_COMPRESSION=

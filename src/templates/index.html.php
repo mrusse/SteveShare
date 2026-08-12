@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PictShare - the smart CDN</title>
+    <title>Steve Share</title>
 
     <!-- Bootstrap -->
     <link href="<?= assetUrl('/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -46,7 +46,7 @@
 
     <div class="container" id="headcontainer">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12 text-center">
                 <a href="/"><img src="/css/imgs/logo/horizontalv3.png" /></a>
             </div>
         </div>
@@ -54,12 +54,6 @@
 
     <div id="main" class="container hv-100">
         <?=$main;?>
-    </div>
-
-    <div class="footer">
-        <div class="container text-center">
-            <p>created by <a href="https://haschek.solutions" target="_blank"><img height="30" src="/css/imgs/hs_logo.png" /></a> - <a href="https://github.com/HaschekSolutions/pictshare" target="_blank">GitHub</a> - <a href="/report">Report abuse</a> - <?=defined('PICTSHARE_VERSION')?htmlspecialchars(PICTSHARE_VERSION):'git'?></p>
-        </div>
     </div>
 
 

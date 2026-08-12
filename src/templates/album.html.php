@@ -12,6 +12,14 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/pictshare.css" rel="stylesheet">
     <style>
+        #main {
+            background: rgb(245, 245, 245); /* Fall-back for browsers that don't support rgba */
+            background: rgba(245, 245, 245, .8);
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            padding: 19px;
+            margin-top: 10px;
+        }
         .album-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 0; }
         .album-item { position: relative; width: 200px; height: 200px; overflow: hidden; background: #111; border-radius: 4px; }
         .album-item a { display: block; width: 100%; height: 100%; }
@@ -23,7 +31,7 @@
 <body>
     <div class="container" id="headcontainer">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12 text-center">
                 <a href="/"><img src="/css/imgs/logo/horizontalv3.png" alt="PictShare" /></a>
             </div>
         </div>
@@ -78,12 +86,6 @@
                 <code><?= htmlspecialchars(getURL() . $album_hash, ENT_QUOTES, 'UTF-8') ?></code>
             </p>
         <?php endif; ?>
-    </div>
-
-    <div class="footer">
-        <div class="container text-center">
-            <p>created by <a href="https://haschek.solutions" target="_blank"><img height="30" src="/css/imgs/hs_logo.png" alt="Haschek Solutions" /></a></p>
-        </div>
     </div>
 
     <script src="/js/jquery.min.js"></script>

@@ -40,9 +40,10 @@
 
         <div class="container" id="headcontainer">
 
-                    <a href="/"><img src="/css/imgs/logo/horizontal3.png" /></a>
-                    <h4><?php echo $slogan; ?></h4>
-                    
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <a href="/"><img src="/css/imgs/logo/horizontal3.png" /></a>
+                    </div>
+
                     <div class="well" id="audiocontainer">
                         <audio controls>
                             <source src="/raw/<?php echo $hash?>" type="audio/<?php 
@@ -65,7 +66,6 @@
                         </div>
                     </div>
             
-            <footer>(c)<?php echo date("y");?> by<br/><a href="https://haschek.solutions" target="_blank"><img height="30" src="/css/imgs/hs_logo.png" /></a></footer>
         </div>
       
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -16,7 +16,10 @@ if (file_exists(ROOT . DS . 'notice.txt'))
             Allowed file types: <?= htmlspecialchars(implode(', ', getUploadFiletypes())) ?>
             <?php
             if (defined('UPLOAD_CODE') && UPLOAD_CODE != ''): ?>
-                <br>Upload Code: <input type="password" id="uploadcode" />
+                <br>Upload Code:
+                <form autocomplete="on" onsubmit="return false;" style="display:inline;">
+                    <input type="password" id="uploadcode" name="uploadcode" autocomplete="current-password" />
+                </form>
             <?php endif; ?>
         </p>
 
@@ -69,11 +72,18 @@ if (file_exists(ROOT . DS . 'notice.txt'))
                 </div>
             </div>
         </div>
+
+        <div class="mt-3">
+            <button class="btn btn-upload-info" type="button" data-bs-toggle="collapse" data-bs-target="#usageInfoCollapse" aria-expanded="false" aria-controls="usageInfoCollapse">
+                Uploading Info
+            </button>
+        </div>
     <?php } ?>
 </div>
 
+<div class="collapse" id="usageInfoCollapse">
 
-<h2 id="api" class="section-heading">Using PictShare</h2>
+<h2 id="api" class="section-heading">Using Steve Share</h2>
 
 <div class="row">
     <div class="col-6">
@@ -257,5 +267,7 @@ If the status code is "200", it will return the modified image directly.
   "delete_url": "<?= getURL() ?>delete_jxgat3wze8lmn9sqwxy4x32p2xm7211g/a3f8c1d2.album"
 }</code></pre>
     </div>
+
+</div>
 
 </div>
